@@ -8,7 +8,7 @@ from utils.user_logger import user_logger
 from utils.language_manager import language_manager
 
 router = Router()
-ADMIN_ID = 8509052775  # Admin ID
+ADMIN_ID = YOUR_TELEGRAM_ID  # Admin ID
 
 @router.message(F.chat.type == "private", ~F.text.startswith('/'))
 async def feedback_handler(message: types.Message, bot: Bot):
