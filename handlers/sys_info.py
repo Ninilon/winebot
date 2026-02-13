@@ -11,7 +11,7 @@ from aiogram.filters import Command
 from utils.language_manager import language_manager
 
 router = Router()
-ADMIN_ID = 8509052775  # Admin ID - change this as needed
+ADMIN_ID = YOUR_TELEGRAM_ID  # Admin ID - change this as needed
 
 def get_server_info():
     """Get server system information"""
