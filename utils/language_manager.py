@@ -23,7 +23,8 @@ class LanguageManager:
                     "<code>@{username} short url</code>\n"
                     "<code>@{username} st url</code>\n"
                     "<code>@{username} sys</code>\n\n"
-                    "Developed by @wineaki"
+                    "Developed by @wineaki\n"
+                    "Licensing: GNU GPL v3.0\n"
                 ),
                 'settings': "⚙️ Settings",
                 'language': "🌐 Language",
