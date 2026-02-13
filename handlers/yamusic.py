@@ -28,7 +28,6 @@ from utils.crypto_manager import crypto_manager
 router = Router()
 logger = logging.getLogger(__name__)
 
-DATABASE_PATH = "users.db"
 
 def init_yamusic_table():
     db = user_logger.db_path
@@ -65,7 +64,8 @@ init_yamusic_table()
 
 def get_user_token(user_id: int) -> typing.Optional[str]:
     import sqlite3
-    conn = sqlite3.connect(DATABASE_PATH)
+    db = user_logger.db_path
+    conn = sqlite3.connect(db)
     cur = conn.cursor()
     cur.execute("SELECT token_encrypted FROM yamusic_tokens WHERE user_id = ?", (user_id,))
     result = cur.fetchone()
@@ -76,7 +76,8 @@ def get_user_token(user_id: int) -> typing.Optional[str]:
 
 def set_user_token(user_id: int, token: str):
     import sqlite3
-    conn = sqlite3.connect(DATABASE_PATH)
+    db = user_logger.db_path
+    conn = sqlite3.connect(db)
     cur = conn.cursor()
     encrypted_token = crypto_manager.encrypt(token)
     cur.execute("""
@@ -88,7 +89,8 @@ def set_user_token(user_id: int, token: str):
 
 def delete_user_token(user_id: int):
     import sqlite3
-    conn = sqlite3.connect(DATABASE_PATH)
+    db = user_logger.db_path
+    conn = sqlite3.connect(db)
     cur = conn.cursor()
     cur.execute("DELETE FROM yamusic_tokens WHERE user_id = ?", (user_id,))
     conn.commit()

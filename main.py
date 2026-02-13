@@ -11,7 +11,7 @@ from handlers import (
     common, tools, sys_info, net_tools, 
     qr_generator, feedback, web_reader, 
     rp_inline, inline_translator, settings, admin,
-    url_shortener, file_converter
+    url_shortener, file_converter, yamusic
 )
 
 async def main():
@@ -53,6 +53,7 @@ async def main():
     dp.include_router(tools.router)
     dp.include_router(net_tools.router)
     dp.include_router(feedback.router)  # Feedback (now with command filtering)
+    dp.include_router(yamusic.router)  # YaMusic
     dp.include_router(common.router)  # Common commands last
 
     # Clear update queue and start
