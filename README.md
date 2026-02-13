@@ -15,7 +15,12 @@ A Telegram bot with Yandex Music integration and utility tools.
 ## Installation
 
 1. Clone the repository
-2. Install dependencies:
+```bash
+git clone https://github.com/YOUR_USERNAME/winebot.git
+cd winebot
+```
+
+2. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
@@ -49,10 +54,9 @@ Optional environment variables:
 ### Inline Modes
 - `@bot ym` - Show currently playing track on Yandex Music
 - `@bot qr <text>` - Generate QR code
-- `@bot short <url>` - Shorten URL
 - `@bot st <url>` - Check website status
 - `@bot sys` - System information
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0. Developed by @wineaki.
+This project is licensed under the GNU General Public License v3.0
